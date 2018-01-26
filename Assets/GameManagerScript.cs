@@ -61,13 +61,13 @@ public class GameManagerScript : MonoBehaviour {
     //update the autogen increase value with the upgrade value
     public void UpdateAutoGenScoreIncrease(double increaseChange)
     {
-        autoGenScoreIncrease += increaseChange;
+        //autoGenScoreIncrease += increaseChange;
     }
 
     //update the click increase value with the upgrade value
     public void UpdateClickScoreIncrease(int increaseChange)
     {
-        clickScoreIncrease += increaseChange;
+        //clickScoreIncrease += increaseChange;
     }
 
 }
