@@ -13,6 +13,7 @@ public class GameManagerScript : MonoBehaviour {
     private static int ticksPerSecond = 60;       //amount of ticks in 1 second
     private int randomUpgradeTicker;              //incremented by 1 every frame, when larger than randomUpgradeSpawn reset it to 0 and spawn a "golden cookie"
     private int randomUpgradeSpawn;               //time for a "golden cookie" to spawn
+    public GameObject randomUpgradePrefab;        //the prefab of the random upgrade
 
     //text display score
     public Text objText;
@@ -60,7 +61,7 @@ public class GameManagerScript : MonoBehaviour {
             randomUpgradeSpawn = Random.Range(180, 300);        //value will be between 3 and 5 seconds for testing.  will be changed to 3 to 5 minutes in final TODO
 
             //spawn "golden cookie"
-
+            SpawnRandomUpgrade();
         }
 
 	}
@@ -92,7 +93,10 @@ public class GameManagerScript : MonoBehaviour {
     //spawn a "golden cookie"
     private void SpawnRandomUpgrade()
     {
-        //make a new button object TODO
-        //attach the "golden cookie" script to it TODO
+        //get the canvas
+        GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
+
+        //create the object and make it a child of the canvas
+        GameObject cookie = Instantiate(randomUpgradePrefab, new Vector3(Random.Range(-300, 300), Random.Range(-180, 180), 0), Quaternion.identity, canvas.transform) as GameObject;
     }
 }

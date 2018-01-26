@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomUpgradeScript : MonoBehaviour {
 
@@ -21,11 +22,12 @@ public class RandomUpgradeScript : MonoBehaviour {
         counter++;
         if (counter >= despawnTime)
         {
-            //destroy object TODO
+            //destroy object
+            Destroy(this.gameObject);
         }
 	}
 
-    public void onClick()
+    public void OnClick()
     {
         //get game manager and its script
         GameObject manager = GameObject.FindGameObjectWithTag("GameManager");
@@ -34,7 +36,7 @@ public class RandomUpgradeScript : MonoBehaviour {
         //add the "golden cookie"s value to the scripts player score
         script.PlayerScore += value;
 
-        //destroy object TODO
-
+        //destroy object
+        Destroy(this.gameObject);
     }
 }

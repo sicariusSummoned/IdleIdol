@@ -190,7 +190,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 686484785}
-        m_MethodName: ClickScoreIncrease
+        m_MethodName: UpdateClickScoreIncrease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 662938737}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,6 +433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoGenScoreIncrease: 1
   clickScoreIncrease: 5
+  randomUpgradePrefab: {fileID: 1133370074877260, guid: d5d7d9c38ca920f4aa60b4f290f7e451,
+    type: 2}
   objText: {fileID: 641906985}
 --- !u!4 &686484786
 Transform:
