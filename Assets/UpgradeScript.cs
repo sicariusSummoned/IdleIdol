@@ -7,15 +7,15 @@ public class UpgradeScript : MonoBehaviour {
     //global variables
     public int baseCost;                    //base cost to buy this upgrade
     public int deltaCost;                   //how much the cost increases with each purchase
-    private int currentCost;                //the current cost to buy the upgrade
+    protected int currentCost;                //the current cost to buy the upgrade
     public double baseValue;                //the base value the upgrade increases score gaining methods by
     public double deltaValue;               //the amount value is increased by when threshold is reached
-    private double currentValue;            //the current value this upgrade increases score generators by
+    protected double currentValue;            //the current value this upgrade increases score generators by
     public int baseThreshold;               //the base quantity needed to be purchased to increase currentValue
     public int deltaThreshold;              //how much to add to nextThreshold after a threshold is reached
-    private int nextThreshold;              //the amount of quantity needed to increase the power of future purchases of this upgrade
-    private int quantity;                   //how many times this upgrade has been purchased
-    private double currentScoreBenefit;     //the current benefit this upgrade is giving to score production
+    protected int nextThreshold;              //the amount of quantity needed to increase the power of future purchases of this upgrade
+    protected int quantity;                   //how many times this upgrade has been purchased
+    protected double currentScoreBenefit;     //the current benefit this upgrade is giving to score production
 
 	// Use this for initialization
 	void Start () {
@@ -35,14 +35,16 @@ public class UpgradeScript : MonoBehaviour {
 
     //handle effects of purchasing the upgrade
     //TODO probably check if the user has enough $/Fans/Value/etc in here and perform purchased actions if they do have enough, else display a message saying they dont have enough
-    private void OnBuy()
+    public void OnBuy()
     {
         //increase cost and quantity
         currentCost += deltaCost;
         quantity++;
 
+        currentScoreBenefit = currentValue * quantity;
+
         //increase score values stored in gamemanager
-        SendValue();
+        //SendValue();
 
         //check if threshold was reached
         if (quantity >= nextThreshold)
@@ -52,10 +54,10 @@ public class UpgradeScript : MonoBehaviour {
     }
 
     //send the value of the upgrade to the gamemanager
-    private void SendValue()
+    public virtual double SendValue()
     {
         //TODO overload in the children classes to send the value to either autogen or click scoreIncrease
-        currentScoreBenefit += currentValue;
+        return currentScoreBenefit;
     }
 
     //handle effects of reaching nextThreshold
@@ -66,5 +68,7 @@ public class UpgradeScript : MonoBehaviour {
 
         //increase nextThreshold
         nextThreshold += deltaThreshold;
+
+        currentScoreBenefit = currentValue * quantity;
     }
 }

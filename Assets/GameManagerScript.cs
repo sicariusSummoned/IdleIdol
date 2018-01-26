@@ -14,6 +14,7 @@ public class GameManagerScript : MonoBehaviour {
 
     //text display score
     public Text objText;
+    public UpgradeScript[] upgrades = new UpgradeScript[2];
 
     //getters and setters
     public double PlayerScore
@@ -25,8 +26,6 @@ public class GameManagerScript : MonoBehaviour {
     void Start () {
         //initialize Game Manager's variables
         playerScore = 0;
-       // autoGenScoreIncrease = 0;
-        //clickScoreIncrease = 0;
         ticker = 0;
 	}
 	
@@ -46,12 +45,16 @@ public class GameManagerScript : MonoBehaviour {
     //increase player's score by the autoGenScoreIncrease value
     private void AutoGenScore()
     {
+        autoGenScoreIncrease = upgrades[1].SendValue();
+
         playerScore += autoGenScoreIncrease;
     }
 
     //increase player's score by the clickScoreIncrease value
     public void ClickScoreIncrease()
     {
+        clickScoreIncrease = (int)upgrades[0].SendValue() + 5;
+
         playerScore += clickScoreIncrease;
     }
 
