@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class ClickUpgrade : UpgradeScript {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //uses base logic and then tells game manager to update the click score.
+    public override void OnBuy()
+    {
+        base.OnBuy();
+
+        GameObject.Find("GameManager").gameObject.SendMessage("UpdateClickScoreIncrease");
+    }
 }

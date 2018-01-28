@@ -555,12 +555,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb92de1bb03a5649bb8c1e774b57a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoGenScoreIncrease: 1
-  clickScoreIncrease: 5
+  autoGenScoreIncrease: 0
+  clickScoreIncrease: 1
   objText: {fileID: 641906985}
-  upgrades:
-  - {fileID: 690866374}
+  perSecUpgrades:
   - {fileID: 1071388438}
+  clickUpgrades:
+  - {fileID: 690866374}
+  perSecFlag: 0
+  clickFlag: 0
 --- !u!4 &686484786
 Transform:
   m_ObjectHideFlags: 0

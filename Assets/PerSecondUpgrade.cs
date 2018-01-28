@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PerSecondUpgrade : UpgradeScript {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-    public override double SendValue()
+    
+    //uses base logic and then tells game manager to update the auto gen score.
+    public override void OnBuy()
     {
-        return currentScoreBenefit;
-    }
+        base.OnBuy();
 
+        GameObject.Find("GameManager").gameObject.SendMessage("UpdateAutoGenScoreIncrease");
+    }
 }

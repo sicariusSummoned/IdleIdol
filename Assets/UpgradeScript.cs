@@ -35,7 +35,7 @@ public class UpgradeScript : MonoBehaviour {
 
     //handle effects of purchasing the upgrade
     //TODO probably check if the user has enough $/Fans/Value/etc in here and perform purchased actions if they do have enough, else display a message saying they dont have enough
-    public void OnBuy()
+    public virtual void OnBuy()
     {
         //increase cost and quantity
         currentCost += deltaCost;
@@ -54,7 +54,7 @@ public class UpgradeScript : MonoBehaviour {
     }
 
     //send the value of the upgrade to the gamemanager
-    public virtual double SendValue()
+    public double SendValue()
     {
         //TODO overload in the children classes to send the value to either autogen or click scoreIncrease
         return currentScoreBenefit;
