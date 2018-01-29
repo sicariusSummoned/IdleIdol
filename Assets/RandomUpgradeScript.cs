@@ -7,18 +7,29 @@ public class RandomUpgradeScript : MonoBehaviour {
 
     //variables
     private int spawnTime;          //time until the "golden cookie" spawns.
+    [SerializeField]
     private int despawnTime;        //time until the "golden cookie" despawns. 3 to 5 seconds
     private int counter;            //counter for the spawn and despawn timers
     private int value;              //point value of the "golden cookie"
     private bool visible;           //is the object visible and clickable?
+    
+    Button btn;
+
+    public RectTransform rect;
 
     // Use this for initialization
+    private void Awake()
+    {
+        btn = GetComponent<Button>();
+    }
     void Start () {
-        spawnTime = Random.Range(180, 300);         //TODO change to longer amount of time
+        spawnTime = 60;//Random.Range(180, 300);         //TODO change to longer amount of time
         counter = 0;
         value = Random.Range(180, 300);     //TODO find a way to pass in values for the "golden cookie" to be worth based on game length
         visible = false;
-        this.gameObject.transform.position = new Vector3(5000, 5000, 0);        //set the object off screen/ make it "invisible"
+        Debug.Log(rect.rect.width);
+        this.gameObject.transform.position = new Vector3(rect.rect.width, rect.rect.height, 0);        //set the object off screen/ make it "invisible"
+        btn.interactable = false;
     }
 	
 	// Update is called once per frame
@@ -64,11 +75,11 @@ public class RandomUpgradeScript : MonoBehaviour {
     {
         //make visible
         visible = true;
-        this.gameObject.transform.position = new Vector3(Random.Range(-300, 300), Random.Range(-180, 180), 0);
+        this.gameObject.transform.position = new Vector3(Random.Range(0, rect.rect.width), Random.Range(0, rect.rect.height), 0);
         System.Console.Write(this.gameObject.transform.position);
 
         //set despawn time
-        despawnTime = Random.Range(180, 300);
+        despawnTime = 60;//Random.Range(180, 300);
 
         //reset counter
         counter = 0;
