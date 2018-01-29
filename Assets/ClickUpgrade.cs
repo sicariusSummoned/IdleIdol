@@ -9,6 +9,6 @@ public class ClickUpgrade : UpgradeScript {
     {
         base.OnBuy();
 
-        GameObject.Find("GameManager").gameObject.SendMessage("UpdateClickScoreIncrease");
+        GameManager.clickFlag = true;
     }
 }

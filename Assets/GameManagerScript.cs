@@ -19,6 +19,10 @@ public class GameManagerScript : MonoBehaviour {
     public List<PerSecondUpgrade> perSecUpgrades = new List<PerSecondUpgrade>();    //upgrades that increment score every second
     public List<ClickUpgrade> clickUpgrades = new List<ClickUpgrade>();             //upgrades that increment score every click
 
+    //flags for updating score values
+    public bool autoGenFlag = false;
+    public bool clickFlag = false;
+
     //getters and setters
     public double PlayerScore
     {
@@ -48,39 +52,43 @@ public class GameManagerScript : MonoBehaviour {
     //increase player's score by the autoGenScoreIncrease value
     private void AutoGenScore()
     {
+        if(autoGenFlag)
+        {
+            autoGenScoreIncrease = 0;
+
+            foreach (PerSecondUpgrade p in perSecUpgrades)
+            {
+                autoGenScoreIncrease += p.GetValue();
+            }
+
+            autoGenFlag = false;
+        }
+
         playerScore += autoGenScoreIncrease;
+    }
+
+    //decrease player score for whatever reason.
+    public void DecreaseScore(double decVal)
+    {
+        playerScore -= decVal;
     }
 
     //increase player's score by the clickScoreIncrease value
     public void ClickScoreIncrease()
     {
+        if(clickFlag)
+        {
+            clickScoreIncrease = 1;
+
+            foreach (ClickUpgrade c in clickUpgrades)
+            {
+                clickScoreIncrease += c.GetValue();
+            }
+
+            clickFlag = false;
+        }
+
         playerScore += clickScoreIncrease;
-    }
-
-    //receives message, updates click score
-    private void UpdateClickScoreIncrease()
-    {
-        Debug.Log("worked");
-
-        clickScoreIncrease = 1;
-
-        foreach (ClickUpgrade c in clickUpgrades)
-        {
-            clickScoreIncrease += c.SendValue();
-        }
-    }
-
-
-    //receives message, updates autoGenScore
-    private void UpdateAutoGenScoreIncrease()
-    {
-        autoGenScoreIncrease = 0;
-
-        foreach (PerSecondUpgrade p in perSecUpgrades)
-        {
-            autoGenScoreIncrease += p.SendValue();
-        }
-
     }
 
 }

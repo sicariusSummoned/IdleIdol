@@ -5,9 +5,9 @@ using UnityEngine;
 public class UpgradeScript : MonoBehaviour {
 
     //global variables
-    public int baseCost;                    //base cost to buy this upgrade
-    public int deltaCost;                   //how much the cost increases with each purchase
-    protected int currentCost;                //the current cost to buy the upgrade
+    public double baseCost;                    //base cost to buy this upgrade
+    public double deltaCost;                   //how much the cost increases with each purchase
+    protected double currentCost;                //the current cost to buy the upgrade
     public double baseValue;                //the base value the upgrade increases score gaining methods by
     public double deltaValue;               //the amount value is increased by when threshold is reached
     protected double currentValue;            //the current value this upgrade increases score generators by
@@ -16,6 +16,7 @@ public class UpgradeScript : MonoBehaviour {
     protected int nextThreshold;              //the amount of quantity needed to increase the power of future purchases of this upgrade
     protected int quantity;                   //how many times this upgrade has been purchased
     protected double currentScoreBenefit;     //the current benefit this upgrade is giving to score production
+    protected GameManagerScript GameManager;  //access to the game manager for interfacing purposes
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,9 @@ public class UpgradeScript : MonoBehaviour {
         currentCost = baseCost;
         currentValue = baseValue;
         currentScoreBenefit = 0;
-	}
+        GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,26 +40,28 @@ public class UpgradeScript : MonoBehaviour {
     //TODO probably check if the user has enough $/Fans/Value/etc in here and perform purchased actions if they do have enough, else display a message saying they dont have enough
     public virtual void OnBuy()
     {
-        //increase cost and quantity
-        currentCost += deltaCost;
-        quantity++;
-
-        currentScoreBenefit = currentValue * quantity;
-
-        //increase score values stored in gamemanager
-        //SendValue();
-
-        //check if threshold was reached
-        if (quantity >= nextThreshold)
+        if (currentCost <= GameManager.PlayerScore)
         {
-            Threshold();
+            //subtract the cost
+            GameManager.DecreaseScore(currentCost);
+
+            //increase cost and quantity
+            currentCost *= deltaCost;
+            quantity++;
+
+            currentScoreBenefit = currentValue * quantity;
+
+            //check if threshold was reached
+            if (quantity >= nextThreshold)
+            {
+                Threshold();
+            }
         }
     }
 
     //send the value of the upgrade to the gamemanager
-    public double SendValue()
+    public double GetValue()
     {
-        //TODO overload in the children classes to send the value to either autogen or click scoreIncrease
         return currentScoreBenefit;
     }
 

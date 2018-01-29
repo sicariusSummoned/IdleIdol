@@ -9,6 +9,6 @@ public class PerSecondUpgrade : UpgradeScript {
     {
         base.OnBuy();
 
-        GameObject.Find("GameManager").gameObject.SendMessage("UpdateAutoGenScoreIncrease");
+        GameManager.autoGenFlag = true;
     }
 }
