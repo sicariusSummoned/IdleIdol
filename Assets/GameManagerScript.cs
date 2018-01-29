@@ -11,9 +11,6 @@ public class GameManagerScript : MonoBehaviour {
     public int clickScoreIncrease;                //the amount score is increased on a click event
     private int autoGenTicker;                    //incremented by 1 every frame, when when a multiple of ticksPerSecond increase score by autoGenScoreIncrease
     private static int ticksPerSecond = 60;       //amount of ticks in 1 second
-    private int randomUpgradeTicker;              //incremented by 1 every frame, when larger than randomUpgradeSpawn reset it to 0 and spawn a "golden cookie"
-    private int randomUpgradeSpawn;               //time for a "golden cookie" to spawn
-    public GameObject randomUpgradePrefab;        //the prefab of the random upgrade
 
     //text display score
     public Text objText;
@@ -32,15 +29,12 @@ public class GameManagerScript : MonoBehaviour {
         //autoGenScoreIncrease = 0;
         //clickScoreIncrease = 0;
         autoGenTicker = 0;
-        randomUpgradeTicker = 0;
-        randomUpgradeSpawn = Random.Range(180, 300);        //value will be between 3 and 5 seconds for testing.  will be changed to 3 to 5 minutes in final TODO
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //increment tickers
         autoGenTicker++;
-        randomUpgradeTicker++;
 
         //display player score
         objText.text = System.Math.Floor(playerScore).ToString();
@@ -50,20 +44,6 @@ public class GameManagerScript : MonoBehaviour {
         {
             UpdateAutoGenScore();
         }
-
-        //if randomUpgradeTicker > randomUpgradeSpawn, spawn a "golden cookie"
-        if (randomUpgradeTicker >= randomUpgradeSpawn)
-        {
-            //reset ticker
-            randomUpgradeTicker = 0;
-
-            //get new spawn time
-            randomUpgradeSpawn = Random.Range(180, 300);        //value will be between 3 and 5 seconds for testing.  will be changed to 3 to 5 minutes in final TODO
-
-            //spawn "golden cookie"
-            SpawnRandomUpgrade();
-        }
-
 	}
 
     //increase player's score by the autoGenScoreIncrease value
@@ -88,15 +68,5 @@ public class GameManagerScript : MonoBehaviour {
     public void UpgradeClickScoreIncrease(int increaseChange)
     {
         clickScoreIncrease += increaseChange;
-    }
-
-    //spawn a "golden cookie"
-    private void SpawnRandomUpgrade()
-    {
-        //get the canvas
-        GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
-
-        //create the object and make it a child of the canvas
-        GameObject cookie = Instantiate(randomUpgradePrefab, new Vector3(Random.Range(-300, 300), Random.Range(-180, 180), 0), Quaternion.identity, canvas.transform) as GameObject;
     }
 }
