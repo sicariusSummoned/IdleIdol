@@ -7,12 +7,11 @@ public class RandomUpgradeScript : MonoBehaviour {
 
     //variables
     private int spawnTime;          //time until the "golden cookie" spawns.
-    [SerializeField]
     private int despawnTime;        //time until the "golden cookie" despawns. 3 to 5 seconds
     private int counter;            //counter for the spawn and despawn timers
     private int value;              //point value of the "golden cookie"
     private bool visible;           //is the object visible and clickable?
-    
+    private RectTransform buttonTransform;      //the button's transform. used to get width and height
     Button btn;
 
     public RectTransform rect;
@@ -23,6 +22,7 @@ public class RandomUpgradeScript : MonoBehaviour {
         btn = GetComponent<Button>();
     }
     void Start () {
+        buttonTransform = (RectTransform)this.gameObject.transform;
         spawnTime = 60;//Random.Range(180, 300);         //TODO change to longer amount of time
         counter = 0;
         value = Random.Range(180, 300);     //TODO find a way to pass in values for the "golden cookie" to be worth based on game length
@@ -40,14 +40,12 @@ public class RandomUpgradeScript : MonoBehaviour {
         //if visible, see if need to despawn
         if (visible && counter >= despawnTime)
         {
-            System.Console.Write("despawning");
             Despawn();
         }
 
         //if not visible, see if need to spawn
         if (counter >= spawnTime && !visible)
         {
-            System.Console.Write("spawning");
             Spawn();
         }
 
@@ -75,8 +73,8 @@ public class RandomUpgradeScript : MonoBehaviour {
     {
         //make visible
         visible = true;
-        this.gameObject.transform.position = new Vector3(Random.Range(0, rect.rect.width), Random.Range(0, rect.rect.height), 0);
-        System.Console.Write(this.gameObject.transform.position);
+        btn.interactable = true;
+        this.gameObject.transform.position = new Vector3(Random.Range(0, rect.rect.width - (buttonTransform.rect.width/2)), Random.Range(0, rect.rect.height - (buttonTransform.rect.height / 2)), 0);
 
         //set despawn time
         despawnTime = 60;//Random.Range(180, 300);
@@ -90,10 +88,7 @@ public class RandomUpgradeScript : MonoBehaviour {
     {
         //make invisible
         visible = false;
-
-        //move object
-        this.gameObject.transform.position = new Vector3(5000, 5000, 0);        //set the object off screen/ make it "invisible"
-        System.Console.Write(this.gameObject.transform.position);
+        btn.interactable = false;
 
         //set spawn time
         spawnTime = Random.Range(180, 300);         //TODO change to longer amount of time
