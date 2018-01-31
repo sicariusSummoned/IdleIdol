@@ -42,13 +42,13 @@ public class GameManagerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //increment tickers
-        autoGenTicker++;
+        ticker++;
 
         //display player score
         objText.text = System.Math.Floor(playerScore).ToString();
 
         //if a second has passed, increase score by autogen amount
-        if (autoGenTicker % ticksPerSecond == 0)
+        if (ticker % ticksPerSecond == 0)
         {
             UpdateAutoGenScore();
         }
