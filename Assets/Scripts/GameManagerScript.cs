@@ -47,6 +47,19 @@ public class GameManagerScript : MonoBehaviour {
         //display player score
         objText.text = System.Math.Floor(playerScore).ToString();
 
+        //update click score if new upgrades were bought
+        if (clickFlag)
+        {
+            clickScoreIncrease = 1;
+
+            foreach (ClickUpgrade c in clickUpgrades)
+            {
+                clickScoreIncrease += c.GetValue();
+            }
+
+            clickFlag = false;
+        }
+
         //if a second has passed, increase score by autogen amount
         if (ticker % ticksPerSecond == 0)
         {
@@ -81,18 +94,6 @@ public class GameManagerScript : MonoBehaviour {
     //increase player's score by the clickScoreIncrease value
     public void ClickScoreIncrease()
     {
-        if(clickFlag)
-        {
-            clickScoreIncrease = 1;
-
-            foreach (ClickUpgrade c in clickUpgrades)
-            {
-                clickScoreIncrease += c.GetValue();
-            }
-
-            clickFlag = false;
-        }
-
         playerScore += clickScoreIncrease;
     }
 }

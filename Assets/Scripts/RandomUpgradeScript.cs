@@ -13,8 +13,10 @@ public class RandomUpgradeScript : MonoBehaviour {
     private bool visible;           //is the object visible and clickable?
     private RectTransform buttonTransform;      //the button's transform. used to get width and height
     Button btn;
+    private int timesUsed;          //how many times it was used. Used for making upgrade worth more the longer the game goes
 
-    public RectTransform rect;
+    public RectTransform canvasRect;
+    public RectTransform upgradeRect;
 
     // Use this for initialization
     private void Awake()
@@ -25,10 +27,10 @@ public class RandomUpgradeScript : MonoBehaviour {
         buttonTransform = (RectTransform)this.gameObject.transform;
         spawnTime = 60;//Random.Range(180, 300);         //TODO change to longer amount of time
         counter = 0;
+        timesUsed = 0;
         value = Random.Range(180, 300);     //TODO find a way to pass in values for the "golden cookie" to be worth based on game length
         visible = false;
-        Debug.Log(rect.rect.width);
-        this.gameObject.transform.position = new Vector3(rect.rect.width, rect.rect.height, 0);        //set the object off screen/ make it "invisible"
+        this.gameObject.transform.position = new Vector3(canvasRect.rect.width + (buttonTransform.rect.width * 2), 0, 0);
         btn.interactable = false;
     }
 	
@@ -57,11 +59,15 @@ public class RandomUpgradeScript : MonoBehaviour {
         if (visible)
         {
             //get game manager and its script
-            GameObject manager = GameObject.FindGameObjectWithTag("GameManager");
+            GameObject manager = GameObject.FindGameObjectWithTag("GameController");
             GameManagerScript script = manager.GetComponent(typeof(GameManagerScript)) as GameManagerScript;
 
             //add the "golden cookie"s value to the scripts player score
             script.PlayerScore += value;
+
+            //edit the next "golden cookies" value
+            timesUsed++;
+            value = Random.Range(300 * timesUsed, 600 * timesUsed);
 
             //destroy object
             Despawn();
@@ -74,7 +80,7 @@ public class RandomUpgradeScript : MonoBehaviour {
         //make visible
         visible = true;
         btn.interactable = true;
-        this.gameObject.transform.position = new Vector3(Random.Range(0, rect.rect.width - (buttonTransform.rect.width/2)), Random.Range(0, rect.rect.height - (buttonTransform.rect.height / 2)), 0);
+        this.gameObject.transform.position = new Vector3(Random.Range((buttonTransform.rect.width / 2), canvasRect.rect.width - upgradeRect.rect.width - (buttonTransform.rect.width/2)), Random.Range((buttonTransform.rect.height / 2), canvasRect.rect.height - (buttonTransform.rect.height / 2)), 0);
 
         //set despawn time
         despawnTime = 60;//Random.Range(180, 300);
@@ -89,6 +95,7 @@ public class RandomUpgradeScript : MonoBehaviour {
         //make invisible
         visible = false;
         btn.interactable = false;
+        this.gameObject.transform.position = new Vector3(canvasRect.rect.width + (buttonTransform.rect.width * 2), 0, 0);
 
         //set spawn time
         spawnTime = Random.Range(180, 300);         //TODO change to longer amount of time

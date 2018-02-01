@@ -285,9 +285,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameManagerScript.cs" />
-    <Compile Include="Assets\RandomUpgradeScript.cs" />
-    <Compile Include="Assets\UpgradeScript.cs" />
+    <Compile Include="Assets\Scripts\Aesthetic.cs" />
+    <Compile Include="Assets\Scripts\CharacterSelect.cs" />
+    <Compile Include="Assets\Scripts\ClickUpgrade.cs" />
+    <Compile Include="Assets\Scripts\GameManagerScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\PerSecondUpgrade.cs" />
+    <Compile Include="Assets\Scripts\RandomUpgradeScript.cs" />
+    <Compile Include="Assets\Scripts\UpgradeScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
