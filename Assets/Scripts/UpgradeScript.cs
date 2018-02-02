@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeScript : MonoBehaviour {
 
     //global variables
     public double baseCost;                    //base cost to buy this upgrade
     public double deltaCost;                   //how much the cost increases with each purchase
-    protected double currentCost;                //the current cost to buy the upgrade
+    public double currentCost;                //the current cost to buy the upgrade
     public double baseValue;                //the base value the upgrade increases score gaining methods by
     public double deltaValue;               //the amount value is increased by when threshold is reached
     protected double currentValue;            //the current value this upgrade increases score generators by
@@ -17,6 +18,10 @@ public class UpgradeScript : MonoBehaviour {
     protected int quantity;                   //how many times this upgrade has been purchased
     protected double currentScoreBenefit;     //the current benefit this upgrade is giving to score production
     protected GameManagerScript GameManager;  //access to the game manager for interfacing purposes
+    protected string name;                      //name of the upgrade, used in playerPrefs
+    public Text costDisplay;
+    public Text valueDisplay;
+    public Text quantityDisplay;
 
 	// Use this for initialization
 	void Start () {
@@ -32,8 +37,11 @@ public class UpgradeScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//place on the screen the current cost, current value, and current score benefit
+        //place on the screen the current cost, current value, and current score benefit
         //TODO overload in the children classes to say per click or per second after the current score benefit
+        costDisplay.text = "Cost: " + currentCost;
+        quantityDisplay.text = "Quantity: " + quantity;
+        valueDisplay.text = "Value: " + currentValue;
 	}
 
     //handle effects of purchasing the upgrade
@@ -48,6 +56,8 @@ public class UpgradeScript : MonoBehaviour {
             //increase cost and quantity
             currentCost *= deltaCost;
             quantity++;
+
+            PlayerPrefs.SetInt(name, quantity);
 
             currentScoreBenefit = currentValue * quantity;
 

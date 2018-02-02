@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour {
     //getters and setters
     public double PlayerScore
     {
-        get { return System.Math.Floor(playerScore); }
+        get { return System.Math.Round(playerScore, 1); }
         set { playerScore = value; }
     }
 
@@ -49,7 +49,7 @@ public class GameManagerScript : MonoBehaviour {
         ticker++;
 
         //display player score
-        objText.text = System.Math.Floor(playerScore).ToString();
+        objText.text = PlayerScore.ToString();
 
         //update click score if new upgrades were bought
         if (clickFlag)
@@ -94,6 +94,12 @@ public class GameManagerScript : MonoBehaviour {
 
         playerScore += (autoGenScoreIncrease * ratesHit);
         ratesHit = 0;
+    }
+
+    public void SavePrefs()
+    {
+        PlayerPrefs.SetFloat("score", (float)playerScore);
+        PlayerPrefs.Save();
     }
 
     //decrease player score for whatever reason.

@@ -2059,10 +2059,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 20
   deltaCost: 1.15
+  currentCost: 0
   baseValue: 5
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
+  costDisplay: {fileID: 0}
+  valueDisplay: {fileID: 0}
+  quantityDisplay: {fileID: 0}
 --- !u!4 &505098872
 Transform:
   m_ObjectHideFlags: 0
@@ -2248,10 +2252,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 1000
   deltaCost: 1.09
+  currentCost: 0
   baseValue: 4
   deltaValue: 2
   baseThreshold: 25
   deltaThreshold: 25
+  costDisplay: {fileID: 0}
+  valueDisplay: {fileID: 0}
+  quantityDisplay: {fileID: 0}
 --- !u!4 &520480457
 Transform:
   m_ObjectHideFlags: 0
@@ -3001,10 +3009,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 10
   deltaCost: 1.16
+  currentCost: 0
   baseValue: 1
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
+  costDisplay: {fileID: 0}
+  valueDisplay: {fileID: 0}
+  quantityDisplay: {fileID: 0}
 --- !u!4 &690866375
 Transform:
   m_ObjectHideFlags: 0
@@ -4046,10 +4058,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 500
   deltaCost: 1.08
+  currentCost: 0
   baseValue: 0.5
   deltaValue: 2
   baseThreshold: 25
   deltaThreshold: 25
+  costDisplay: {fileID: 0}
+  valueDisplay: {fileID: 0}
+  quantityDisplay: {fileID: 0}
 --- !u!4 &906415759
 Transform:
   m_ObjectHideFlags: 0
@@ -4791,10 +4807,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 100
   deltaCost: 1.07
+  currentCost: 0
   baseValue: 0.1
   deltaValue: 2
   baseThreshold: 10
   deltaThreshold: 10
+  costDisplay: {fileID: 0}
+  valueDisplay: {fileID: 0}
+  quantityDisplay: {fileID: 0}
 --- !u!4 &1071388439
 Transform:
   m_ObjectHideFlags: 0
@@ -5362,7 +5382,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1281225115}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.591716
+  m_Size: 0.41379392
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6595,10 +6615,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 100
   deltaCost: 1.14
+  currentCost: 0
   baseValue: 20
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
+  costDisplay: {fileID: 0}
+  valueDisplay: {fileID: 0}
+  quantityDisplay: {fileID: 0}
 --- !u!4 &1377149607
 Transform:
   m_ObjectHideFlags: 0
@@ -7003,7 +7027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -193, y: 250.00002}
+  m_AnchoredPosition: {x: -193, y: 174.8279}
   m_SizeDelta: {x: 386, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1440596233
@@ -8217,7 +8241,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 304731590}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.5263158
+  m_Size: 0.3680588
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

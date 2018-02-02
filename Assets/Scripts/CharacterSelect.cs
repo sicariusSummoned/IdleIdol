@@ -29,11 +29,13 @@ public class CharacterSelect : MonoBehaviour {
 	public void clickGirl(){
 		boySelected = false;
 		girlSelected = true;
+        PlayerPrefs.SetString("character", "girl");
 	}
 
 	public void clickBoy(){
 		boySelected = true;
 		girlSelected = false;
+        PlayerPrefs.SetString("character", "boy");
 	}
 
 	public void LoadScene(){
