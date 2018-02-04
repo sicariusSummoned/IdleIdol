@@ -22,9 +22,15 @@ public class UpgradeScript : MonoBehaviour {
     public Text costDisplay;
     public Text valueDisplay;
     public Text quantityDisplay;
+    public Button btn;                      //the buttoncomponent for the upgrade
+    public GameObject button;               //the gameobject of the button for the upgrade
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void Awake()
+    {
+        //btn = button.GetComponent<Button>();
+    }
+    void Start () {
         //initialize the private values
         quantity = 0;
         nextThreshold = baseThreshold;
@@ -42,6 +48,17 @@ public class UpgradeScript : MonoBehaviour {
         costDisplay.text = "Cost: " + currentCost;
         quantityDisplay.text = "Quantity: " + quantity;
         valueDisplay.text = "Value: " + currentValue;
+
+        /*
+        if (GameManager.PlayerScore >= currentCost)
+        {
+            btn.interactable = true;
+        }
+        else
+        {
+            btn.interactable = false;
+        }
+        */
 	}
 
     //handle effects of purchasing the upgrade

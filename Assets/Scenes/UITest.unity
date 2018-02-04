@@ -2083,6 +2083,8 @@ MonoBehaviour:
   costDisplay: {fileID: 0}
   valueDisplay: {fileID: 0}
   quantityDisplay: {fileID: 0}
+  btn: {fileID: 0}
+  button: {fileID: 0}
 --- !u!4 &505098872
 Transform:
   m_ObjectHideFlags: 0
@@ -2276,6 +2278,8 @@ MonoBehaviour:
   costDisplay: {fileID: 0}
   valueDisplay: {fileID: 0}
   quantityDisplay: {fileID: 0}
+  btn: {fileID: 0}
+  button: {fileID: 0}
 --- !u!4 &520480457
 Transform:
   m_ObjectHideFlags: 0
@@ -3049,6 +3053,8 @@ MonoBehaviour:
   costDisplay: {fileID: 0}
   valueDisplay: {fileID: 0}
   quantityDisplay: {fileID: 0}
+  btn: {fileID: 0}
+  button: {fileID: 0}
 --- !u!4 &690866375
 Transform:
   m_ObjectHideFlags: 0
@@ -4166,6 +4172,8 @@ MonoBehaviour:
   costDisplay: {fileID: 2110928200}
   valueDisplay: {fileID: 907678456}
   quantityDisplay: {fileID: 140236501}
+  btn: {fileID: 0}
+  button: {fileID: 0}
 --- !u!4 &906415759
 Transform:
   m_ObjectHideFlags: 0
@@ -5006,12 +5014,12 @@ Prefab:
     - target: {fileID: 224473821874919222, guid: 8c7f8b7cb3d621245a8a9e04c2e45356,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 191
       objectReference: {fileID: 0}
     - target: {fileID: 224473821874919222, guid: 8c7f8b7cb3d621245a8a9e04c2e45356,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55
       objectReference: {fileID: 0}
     - target: {fileID: 224473821874919222, guid: 8c7f8b7cb3d621245a8a9e04c2e45356,
         type: 2}
@@ -5031,7 +5039,7 @@ Prefab:
     - target: {fileID: 224473821874919222, guid: 8c7f8b7cb3d621245a8a9e04c2e45356,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224473821874919222, guid: 8c7f8b7cb3d621245a8a9e04c2e45356,
         type: 2}
@@ -5041,7 +5049,7 @@ Prefab:
     - target: {fileID: 224473821874919222, guid: 8c7f8b7cb3d621245a8a9e04c2e45356,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224473821874919222, guid: 8c7f8b7cb3d621245a8a9e04c2e45356,
         type: 2}
@@ -5113,6 +5121,8 @@ MonoBehaviour:
   costDisplay: {fileID: 1706523833}
   valueDisplay: {fileID: 465906426}
   quantityDisplay: {fileID: 26719430}
+  btn: {fileID: 0}
+  button: {fileID: 0}
 --- !u!4 &1071388439
 Transform:
   m_ObjectHideFlags: 0
@@ -5680,7 +5690,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1281225115}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.591716
+  m_Size: 0.41326156
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6397,7 +6407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1133370074877260, guid: d5d7d9c38ca920f4aa60b4f290f7e451, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5d7d9c38ca920f4aa60b4f290f7e451, type: 2}
@@ -6924,6 +6934,8 @@ MonoBehaviour:
   costDisplay: {fileID: 0}
   valueDisplay: {fileID: 0}
   quantityDisplay: {fileID: 0}
+  btn: {fileID: 0}
+  button: {fileID: 0}
 --- !u!4 &1377149607
 Transform:
   m_ObjectHideFlags: 0
@@ -7263,7 +7275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -193, y: 250}
+  m_AnchoredPosition: {x: -193, y: 174.60306}
   m_SizeDelta: {x: 386, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1440596233
@@ -8284,8 +8296,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304731591}
   m_HandleRect: {fileID: 304731590}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.2631579
+  m_Value: 0.9999999
+  m_Size: 0.3675852
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
