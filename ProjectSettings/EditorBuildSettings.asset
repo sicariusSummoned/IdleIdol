@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/CharacterSelect.unity
     guid: 821f324acf1bd954e810663ce1b6240b
+  - enabled: 1
+    path: Assets/scenes/UITest.unity
+    guid: a7e11eca9d6ebb6428e62dd5088c9eb4
