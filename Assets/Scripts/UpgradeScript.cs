@@ -100,6 +100,8 @@ public class UpgradeScript : MonoBehaviour {
             {
                 Threshold();
             }
+
+            GameManager.autoGenFlag = true;
         }
     }
 

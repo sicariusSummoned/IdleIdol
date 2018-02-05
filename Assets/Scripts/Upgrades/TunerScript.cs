@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TunerScript : ClickUpgrade {
+public class TunerScript : UpgradeScript {
 
 	// Use this for initialization
 	void Awake () {

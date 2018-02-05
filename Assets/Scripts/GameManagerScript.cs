@@ -19,8 +19,7 @@ public class GameManagerScript : MonoBehaviour {
     public Text objText;
 
     //Lists referencing the manager class for each upgrade
-    public List<PerSecondUpgrade> perSecUpgrades = new List<PerSecondUpgrade>();    //upgrades that increment score every second
-    public List<ClickUpgrade> clickUpgrades = new List<ClickUpgrade>();             //upgrades that increment score every click
+    public List<UpgradeScript> upgrades = new List<UpgradeScript>();    //upgrades that increment score every second
 
     //flags for updating score values
     public bool autoGenFlag = false;
@@ -58,14 +57,15 @@ public class GameManagerScript : MonoBehaviour {
         objText.text = PlayerScore.ToString();
 
         //update click score if new upgrades were bought
+        //not deleting bc we can still use this for researches
         if (clickFlag)
         {
             clickScoreIncrease = 1;
 
-            foreach (ClickUpgrade c in clickUpgrades)
+            /*foreach (ClickUpgrade c in clickUpgrades)
             {
                 clickScoreIncrease += c.GetValue();
-            }
+            }*/
 
             clickFlag = false;
         }
@@ -95,9 +95,9 @@ public class GameManagerScript : MonoBehaviour {
         {
             autoGenScoreIncrease = 0;
 
-            foreach (PerSecondUpgrade p in perSecUpgrades)
+            foreach (UpgradeScript u in upgrades)
             {
-                autoGenScoreIncrease += p.GetValue();
+                autoGenScoreIncrease += u.GetValue();
             }
 
             autoGenFlag = false;

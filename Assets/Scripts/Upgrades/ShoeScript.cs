@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShoeScript : ClickUpgrade {
+public class ShoeScript : UpgradeScript {
 
 	// Use this for initialization
 	void Awake () {

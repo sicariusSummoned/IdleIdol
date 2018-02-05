@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BodyDoubleScript : PerSecondUpgrade {
+public class BodyDoubleScript : UpgradeScript {
 
 	// Use this for initialization
 	void Awake () {

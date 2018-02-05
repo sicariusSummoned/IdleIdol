@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecordingScript : PerSecondUpgrade {
+public class RecordingScript : UpgradeScript {
 
 	// Use this for initialization
 	void Awake () {

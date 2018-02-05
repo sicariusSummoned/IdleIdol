@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HologramScript : PerSecondUpgrade {
+public class HologramScript : UpgradeScript {
 
 	// Use this for initialization
 	void Awake () {
