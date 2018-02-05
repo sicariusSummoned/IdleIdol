@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -45,9 +46,16 @@ public class UpgradeScript : MonoBehaviour {
 	void Update () {
         //place on the screen the current cost, current value, and current score benefit
         //TODO overload in the children classes to say per click or per second after the current score benefit
-        costDisplay.text = "Cost: " + currentCost;
-        quantityDisplay.text = "Quantity: " + quantity;
-        valueDisplay.text = "Value: " + currentValue;
+
+
+        //Let's truncate the costs before we print them
+        double simpleCost = Math.Round(currentCost, 2);
+        double simpleValue = Math.Round(currentValue, 2);
+
+
+        costDisplay.text = "Price: " + simpleCost;
+        quantityDisplay.text = "Owned: " + quantity;
+        valueDisplay.text = "Value: " + simpleValue;
 
         /*
         if (GameManager.PlayerScore >= currentCost)
