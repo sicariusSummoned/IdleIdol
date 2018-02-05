@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShoeScript : ClickUpgrade {
+public class BodyDoubleScript : PerSecondUpgrade {
 
 	// Use this for initialization
-	void Start () {
-        name = "shoes";
+	void Awake () {
+        name = "bodyDub";
 	}
 }

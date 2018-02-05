@@ -5,7 +5,7 @@ using UnityEngine;
 public class RecordingScript : PerSecondUpgrade {
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         name = "recording";
 	}
 }

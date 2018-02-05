@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TunerScript : ClickUpgrade {
+public class ShoeScript : ClickUpgrade {
 
 	// Use this for initialization
-	void Start () {
-        name = "tuner";
+	void Awake () {
+        name = "shoes";
 	}
 }

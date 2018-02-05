@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmpScript : ClickUpgrade {
+public class HologramScript : PerSecondUpgrade {
 
 	// Use this for initialization
-	void Start () {
-        name = "amp";
+	void Awake () {
+        name = "holo";
+
 	}
-	
 }

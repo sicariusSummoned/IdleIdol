@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BodyDoubleScript : PerSecondUpgrade {
+public class TunerScript : ClickUpgrade {
 
 	// Use this for initialization
-	void Start () {
-        name = "bodyDub";
+	void Awake () {
+        name = "tuner";
 	}
 }
