@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecordingScript : PerSecondUpgrade {
+public class AmpScript : UpgradeScript {
 
 	// Use this for initialization
-	void Start () {
-        name = "recording";
+	void Awake () {
+        name = "amp";
 	}
+	
 }

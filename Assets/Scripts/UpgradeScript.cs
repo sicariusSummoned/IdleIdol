@@ -40,6 +40,15 @@ public class UpgradeScript : MonoBehaviour {
         currentScoreBenefit = 0;
         GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
 
+        if(PlayerPrefs.GetInt(name) != 0)
+        {
+            quantity = PlayerPrefs.GetInt(name);
+
+            currentCost *= Math.Pow(deltaCost, quantity);
+
+            Threshold();
+        }
+
     }
 	
 	// Update is called once per frame
@@ -91,6 +100,8 @@ public class UpgradeScript : MonoBehaviour {
             {
                 Threshold();
             }
+
+            GameManager.autoGenFlag = true;
         }
     }
 
@@ -104,11 +115,16 @@ public class UpgradeScript : MonoBehaviour {
     private void Threshold()
     {
         //increase value
-        currentValue += deltaValue;
+        currentValue *= deltaValue;
 
         //increase nextThreshold
         nextThreshold += deltaThreshold;
 
         currentScoreBenefit = currentValue * quantity;
+
+        if(quantity >= nextThreshold)
+        {
+            Threshold();
+        }
     }
 }

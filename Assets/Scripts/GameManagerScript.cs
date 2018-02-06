@@ -13,13 +13,13 @@ public class GameManagerScript : MonoBehaviour {
     private static int ticksPerSecond = 60;       //amount of ticks in 1 second
     private int rate;                             //amount of ticks needed for autogen
     private int ratesHit;                         //used to avoid issues of rate being almost every frame
+    private float lastSaved;
 
     //text display score
     public Text objText;
 
     //Lists referencing the manager class for each upgrade
-    public List<PerSecondUpgrade> perSecUpgrades = new List<PerSecondUpgrade>();    //upgrades that increment score every second
-    public List<ClickUpgrade> clickUpgrades = new List<ClickUpgrade>();             //upgrades that increment score every click
+    public List<UpgradeScript> upgrades = new List<UpgradeScript>();    //upgrades that increment score every second
 
     //flags for updating score values
     public bool autoGenFlag = false;
@@ -41,6 +41,11 @@ public class GameManagerScript : MonoBehaviour {
         ratesHit = 0;
         //autoGenScoreIncrease = 0;
         //clickScoreIncrease = 0;
+        lastSaved = Time.time;
+        if(PlayerPrefs.GetFloat("score") != 0)
+        {
+            playerScore = PlayerPrefs.GetFloat("score");
+        }
 	}
 	
 	// Update is called once per frame
@@ -52,14 +57,15 @@ public class GameManagerScript : MonoBehaviour {
         objText.text = PlayerScore.ToString();
 
         //update click score if new upgrades were bought
+        //not deleting bc we can still use this for researches
         if (clickFlag)
         {
             clickScoreIncrease = 1;
 
-            foreach (ClickUpgrade c in clickUpgrades)
+            /*foreach (ClickUpgrade c in clickUpgrades)
             {
                 clickScoreIncrease += c.GetValue();
-            }
+            }*/
 
             clickFlag = false;
         }
@@ -75,6 +81,11 @@ public class GameManagerScript : MonoBehaviour {
         {
             UpdateAutoGenScore();
         }
+
+        if (Time.time - lastSaved >= 180)
+        {
+            SaveData();
+        }
 	}
 
     //increase player's score by the autoGenScoreIncrease value
@@ -84,9 +95,9 @@ public class GameManagerScript : MonoBehaviour {
         {
             autoGenScoreIncrease = 0;
 
-            foreach (PerSecondUpgrade p in perSecUpgrades)
+            foreach (UpgradeScript u in upgrades)
             {
-                autoGenScoreIncrease += p.GetValue();
+                autoGenScoreIncrease += u.GetValue();
             }
 
             autoGenFlag = false;
@@ -96,8 +107,10 @@ public class GameManagerScript : MonoBehaviour {
         ratesHit = 0;
     }
 
-    public void SavePrefs()
+    public void SaveData()
     {
+        Debug.Log("Saving");
+
         PlayerPrefs.SetFloat("score", (float)playerScore);
         PlayerPrefs.Save();
     }
@@ -112,5 +125,13 @@ public class GameManagerScript : MonoBehaviour {
     public void ClickScoreIncrease()
     {
         playerScore += clickScoreIncrease;
+    }
+
+    public void DeleteData()
+    {
+        Debug.Log("Deleting");
+
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 }

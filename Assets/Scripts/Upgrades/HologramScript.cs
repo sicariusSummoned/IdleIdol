@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BodyDoubleScript : PerSecondUpgrade {
+public class HologramScript : UpgradeScript {
 
 	// Use this for initialization
-	void Start () {
-        name = "bodyDub";
+	void Awake () {
+        name = "holo";
+
 	}
 }
