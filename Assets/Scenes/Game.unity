@@ -182,7 +182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000009064868}
+  m_AnchoredPosition: {x: 0, y: 0.000013398591}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &23899881
@@ -753,6 +753,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 548302962}
+--- !u!1 &563143808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 563143810}
+  - component: {fileID: 563143809}
+  m_Layer: 5
+  m_Name: ConfettiMaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &563143809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 563143808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1c49705344b654eb6ab17adc1b4738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 198471684606287838, guid: 194a13bb97dac514bb00bbbc6aded91e, type: 2}
+  - {fileID: 198484546384294348, guid: 0298dcf6c8f102448b7599e4e965cd74, type: 2}
+  - {fileID: 198476123537192734, guid: 217440aa11c1741489ba5f6c8ad46447, type: 2}
+  - {fileID: 198958454160087322, guid: 03837c0414454d445b82ce62bb68a7fa, type: 2}
+  - {fileID: 198607658363190578, guid: 02f932084e72d964296e0053e2d070e0, type: 2}
+  - {fileID: 198493409753725540, guid: 84c556849d2c06e46ad5b611409d1b6b, type: 2}
+  - {fileID: 198617368255345942, guid: 2f9575511a168154cb51293ffddcf2a6, type: 2}
+  - {fileID: 198371138078083748, guid: c42b79755e7da884d8616e0985c56cff, type: 2}
+  - {fileID: 198928239112089394, guid: 4427676ef1eafaa49a87ab8bfe25b961, type: 2}
+  - {fileID: 198570623719429562, guid: bed442e9b34503741a06502863875d26, type: 2}
+  confettiOrigin: {fileID: 563143810}
+--- !u!4 &563143810
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 563143808}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.7003822, y: 0, z: 80}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &579001961
 Prefab:
   m_ObjectHideFlags: 0
@@ -1071,8 +1123,8 @@ Canvas:
   m_GameObject: {fileID: 662938736}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1970117140}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1546,6 +1598,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 826515159}
         m_MethodName: OnButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 563143809}
+        m_MethodName: OnActivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2578,8 +2641,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1281225116}
   m_HandleRect: {fileID: 1281225115}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3272,7 +3335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.00042721015}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1440596233
@@ -3720,8 +3783,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304731591}
   m_HandleRect: {fileID: 304731590}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.6606227
+  m_Value: 0.99999803
+  m_Size: 0.6603154
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4174,7 +4237,7 @@ Camera:
   m_GameObject: {fileID: 1970117137}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -4209,7 +4272,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970117137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -96.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
