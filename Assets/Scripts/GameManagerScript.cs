@@ -107,6 +107,16 @@ public class GameManagerScript : MonoBehaviour {
         ratesHit = 0;
     }
 
+    //increase player's score by the autoGenScoreIncrease value
+    private void UpdateAutoGenRate(int upgradeValue)
+    {
+        rate -= upgradeValue;
+        if (rate < 1)
+        {
+            rate = 1;
+        }
+    }
+
     public void SaveData()
     {
         Debug.Log("Saving");
