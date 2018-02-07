@@ -39,7 +39,7 @@ public class CharacterSelect : MonoBehaviour {
 	}
 
 	public void LoadScene(){
-		SceneManager.LoadScene ("UITest");
+		SceneManager.LoadScene ("Game");
 
 	}
 
