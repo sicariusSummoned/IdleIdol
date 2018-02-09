@@ -608,10 +608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2bea368c1fa924ab4b377370648db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCost: 20
+  baseCost: 250
   deltaCost: 1.15
   currentCost: 0
-  baseValue: 5
+  baseValue: 0.5
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
@@ -660,10 +660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935c6f8bb2fc8d14d8c20b6540b5cd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCost: 1000
+  baseCost: 250000
   deltaCost: 1.09
   currentCost: 0
-  baseValue: 4
+  baseValue: 96
   deltaValue: 2
   baseThreshold: 25
   deltaThreshold: 25
@@ -1254,10 +1254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1b4f88af7c1c548a751b21c8ae79d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCost: 10
+  baseCost: 50
   deltaCost: 1.16
   currentCost: 0
-  baseValue: 1
+  baseValue: 0.1
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
@@ -1953,10 +1953,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3df496b8a45f142b63aab55c7118fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCost: 500
+  baseCost: 50000
   deltaCost: 1.08
   currentCost: 0
-  baseValue: 0.5
+  baseValue: 48
   deltaValue: 2
   baseThreshold: 25
   deltaThreshold: 25
@@ -2394,10 +2394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6af5b0e3b17bf45b102bbb6c8eacbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCost: 100
+  baseCost: 15000
   deltaCost: 1.07
   currentCost: 0
-  baseValue: 0.1
+  baseValue: 16
   deltaValue: 2
   baseThreshold: 10
   deltaThreshold: 10
@@ -3198,10 +3198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a85d3593f3fd3f408754e3f81e6e0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCost: 50
+  baseCost: 500
   deltaCost: 1.14
   currentCost: 0
-  baseValue: 20
+  baseValue: 4
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
@@ -3784,7 +3784,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 304731590}
   m_Direction: 2
   m_Value: 0.99999803
-  m_Size: 0.6610001
+  m_Size: 0.66081136
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
