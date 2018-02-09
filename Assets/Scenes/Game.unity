@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.666, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.666, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1383,7 +1383,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 791962793}
   m_OnClick:
     m_PersistentCalls:
@@ -1468,7 +1468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Research
+  m_Text: COMING SOON
 --- !u!222 &821702583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1727,7 +1727,7 @@ Prefab:
     - target: {fileID: 224404383414418668, guid: 330b8bad3f1470f40b89e6cf776eff6f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -265
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224404383414418668, guid: 330b8bad3f1470f40b89e6cf776eff6f,
         type: 2}
@@ -3470,7 +3470,7 @@ Prefab:
     - target: {fileID: 224404383414418668, guid: 330b8bad3f1470f40b89e6cf776eff6f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -160
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224404383414418668, guid: 330b8bad3f1470f40b89e6cf776eff6f,
         type: 2}
@@ -4367,7 +4367,7 @@ Prefab:
     - target: {fileID: 224404383414418668, guid: 330b8bad3f1470f40b89e6cf776eff6f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224404383414418668, guid: 330b8bad3f1470f40b89e6cf776eff6f,
         type: 2}
