@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 1736748038}
-  credits: {fileID: 0}
+  credits: {fileID: 2032309817}
 --- !u!4 &1128367806
 Transform:
   m_ObjectHideFlags: 0
