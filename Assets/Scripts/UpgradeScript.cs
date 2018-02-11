@@ -20,6 +20,7 @@ public class UpgradeScript : MonoBehaviour {
     protected double currentScoreBenefit;     //the current benefit this upgrade is giving to score production
     protected GameManagerScript GameManager;  //access to the game manager for interfacing purposes
     protected string name;                      //name of the upgrade, used in playerPrefs
+    public int multiplier;                      //
     public Text costDisplay;
     public Text valueDisplay;
     public Text quantityDisplay;
@@ -38,6 +39,7 @@ public class UpgradeScript : MonoBehaviour {
         currentCost = baseCost;
         currentValue = baseValue;
         currentScoreBenefit = 0;
+        multiplier = 0;
         GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
 
         if(PlayerPrefs.GetInt(name) != 0)
@@ -108,7 +110,7 @@ public class UpgradeScript : MonoBehaviour {
     //send the value of the upgrade to the gamemanager
     public double GetValue()
     {
-        return currentScoreBenefit;
+        return currentScoreBenefit * multiplier;
     }
 
     //handle effects of reaching nextThreshold

@@ -288,11 +288,14 @@
     <Compile Include="Assets\Scripts\Aesthetic.cs" />
     <Compile Include="Assets\Scripts\ButtonAnimationScript.cs" />
     <Compile Include="Assets\Scripts\CharacterSelect.cs" />
+    <Compile Include="Assets\Scripts\ClickPercentResearch.cs" />
+    <Compile Include="Assets\Scripts\ClickUpgrades.cs" />
     <Compile Include="Assets\Scripts\ConfettiManager.cs" />
     <Compile Include="Assets\Scripts\ConfettiSelfDestructScript.cs" />
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\ImageChange.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MultiplierResearch.cs" />
     <Compile Include="Assets\Scripts\RandomUpgradeScript.cs" />
     <Compile Include="Assets\Scripts\Upgrades\AmpScript.cs" />
     <Compile Include="Assets\Scripts\Upgrades\BodyDoubleScript.cs" />
