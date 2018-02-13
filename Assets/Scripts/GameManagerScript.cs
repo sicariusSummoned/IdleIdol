@@ -15,6 +15,10 @@ public class GameManagerScript : MonoBehaviour {
     private int rate;                             //amount of ticks needed for autogen
     private int ratesHit;                         //used to avoid issues of rate being almost every frame
     private float lastSaved;
+    private double totalScore = 0;
+
+    //list of click researches, uses the base threshold of the item to determine if you've gotten enough total score to see
+    public List<UpgradeScript> clickResearches = new List<UpgradeScript>();
 
     //text display score
     public Text objText;
@@ -31,6 +35,11 @@ public class GameManagerScript : MonoBehaviour {
     {
         get { return System.Math.Round(playerScore, 1); }
         set { playerScore = value; }
+    }
+
+    public double TotalScore
+    {
+        get { return System.Math.Round(totalScore, 1); }
     }
 
     // Use this for initialization
@@ -63,12 +72,10 @@ public class GameManagerScript : MonoBehaviour {
         if (clickFlag)
         {
             clickScoreIncrease = 1;
-            /*
-            foreach (ClickUpgrade c in clickUpgrades)
+            foreach (UpgradeScript c in clickResearches)
             {
                 clickScoreIncrease += c.GetValue();
             }
-            */
 
             clickFlag = false;
         }
@@ -107,6 +114,7 @@ public class GameManagerScript : MonoBehaviour {
         }
 
         playerScore += (autoGenScoreIncrease * ratesHit);
+        totalScore += (autoGenScoreIncrease * ratesHit);
         ratesHit = 0;
     }
 
@@ -125,6 +133,7 @@ public class GameManagerScript : MonoBehaviour {
         Debug.Log("Saving");
 
         PlayerPrefs.SetFloat("score", (float)playerScore);
+        PlayerPrefs.SetFloat("totalScore", (float)totalScore);
         PlayerPrefs.Save();
     }
 
@@ -137,7 +146,9 @@ public class GameManagerScript : MonoBehaviour {
     //increase player's score by the clickScoreIncrease value
     public void ClickScoreIncrease()
     {
+
         playerScore += clickScoreIncrease + (clickPercentScoreIncrease * autoGenScoreIncrease);
+        totalScore += clickScoreIncrease + (clickPercentScoreIncrease * autoGenScoreIncrease);
     }
 
     public void DeleteData()

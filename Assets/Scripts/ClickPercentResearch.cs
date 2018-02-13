@@ -8,11 +8,11 @@ public class ClickPercentResearch : UpgradeScript
 {
 
     // Use this for initialization
-    private void Awake()
+    protected virtual void Awake()
     {
         btn = button.GetComponent<Button>();
     }
-    void Start()
+    protected virtual void Start()
     {
         //initialize the private values
         quantity = 0;
@@ -24,7 +24,9 @@ public class ClickPercentResearch : UpgradeScript
 
         if (PlayerPrefs.GetInt(name) != 0)
         {
-            quantity = PlayerPrefs.GetInt(name);
+            quantity = 0;
+
+            OnBuyNoDecrease();
         }
     }
 
@@ -40,7 +42,7 @@ public class ClickPercentResearch : UpgradeScript
         quantityDisplay.text = "Owned: " + quantity;
         valueDisplay.text = "Percentage: " + simpleValue;
 
-        if (GameManager.PlayerScore >= currentCost && quantity < 1)
+        if (GameManager.PlayerScore >= currentCost && quantity < 1 && GameManager.TotalScore >= baseThreshold)
         {
             btn.interactable = true;
         }
@@ -66,5 +68,17 @@ public class ClickPercentResearch : UpgradeScript
 
             GameManager.clickPercentScoreIncrease += (currentValue/100);
         }
+    }
+
+    private void OnBuyNoDecrease()
+    {
+        //increase quantity
+        quantity = 1;
+
+        PlayerPrefs.SetInt(name, quantity);
+
+        currentScoreBenefit = currentValue * quantity;
+
+        GameManager.clickPercentScoreIncrease += (currentValue / 100);
     }
 }

@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class ClickUpgrades : UpgradeScript {
 
     // Use this for initialization
-    private void Awake()
+    protected virtual void Awake()
     {
         btn = button.GetComponent<Button>();
     }
-    void Start () {
+
+    protected virtual void Start () {
         //initialize the private values
         quantity = 0;
         nextThreshold = baseThreshold;
@@ -22,7 +23,9 @@ public class ClickUpgrades : UpgradeScript {
 
         if (PlayerPrefs.GetInt(name) != 0)
         {
-            quantity = PlayerPrefs.GetInt(name);
+            quantity = 0;
+
+            OnBuyNoDecrease();
         }
     }
 	
@@ -32,12 +35,11 @@ public class ClickUpgrades : UpgradeScript {
         double simpleCost = Math.Round(currentCost, 2);
         double simpleValue = Math.Round(currentValue, 2);
 
-
         costDisplay.text = "Price: " + simpleCost;
         quantityDisplay.text = "Owned: " + quantity;
         valueDisplay.text = "Value: " + simpleValue;
 
-        if (GameManager.PlayerScore >= currentCost && quantity < 1)
+        if (GameManager.PlayerScore >= currentCost && quantity < 1 && GameManager.TotalScore >= baseThreshold)
         {
             btn.interactable = true;
         }
@@ -49,19 +51,38 @@ public class ClickUpgrades : UpgradeScript {
 
     public override void OnBuy()
     {
+        //Debug.Log(name + " buy");
+
         if (quantity < 1)
         {
+
             //subtract the cost
             GameManager.DecreaseScore(currentCost);
 
             //increase quantity
-            quantity++;
+            quantity = 1;
 
             PlayerPrefs.SetInt(name, quantity);
 
-            currentScoreBenefit = currentValue * quantity;
+            currentScoreBenefit = currentValue;
+
+            Debug.Log(multiplier);
 
             GameManager.clickFlag = true;
         }
+    }
+
+    private void OnBuyNoDecrease()
+    {
+        //increase quantity
+        quantity = 1;
+
+        PlayerPrefs.SetInt(name, quantity);
+
+        currentScoreBenefit = currentValue;
+
+        Debug.Log(multiplier);
+
+        GameManager.clickFlag = true;
     }
 }
