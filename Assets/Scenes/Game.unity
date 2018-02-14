@@ -969,6 +969,7 @@ MonoBehaviour:
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
+  multiplier: 1
   costDisplay: {fileID: 579001967}
   valueDisplay: {fileID: 579001966}
   quantityDisplay: {fileID: 579001965}
@@ -986,6 +987,7 @@ GameObject:
   - component: {fileID: 508571552}
   - component: {fileID: 508571551}
   - component: {fileID: 508571550}
+  - component: {fileID: 508571553}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -1052,7 +1054,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 505098873}
+      - m_Target: {fileID: 508571553}
         m_MethodName: OnBuy
         m_Mode: 1
         m_Arguments:
@@ -1100,6 +1102,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 508571548}
+--- !u!114 &508571553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 508571548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2bea368c1fa924ab4b377370648db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCost: 250
+  deltaCost: 1.15
+  currentCost: 250
+  baseValue: 0.5
+  deltaValue: 1.5
+  baseThreshold: 10
+  deltaThreshold: 10
+  multiplier: 1
+  costDisplay: {fileID: 579001967}
+  valueDisplay: {fileID: 579001966}
+  quantityDisplay: {fileID: 579001965}
+  btn: {fileID: 0}
+  button: {fileID: 508571548}
 --- !u!1 &520480455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,6 +1173,7 @@ MonoBehaviour:
   deltaValue: 2
   baseThreshold: 25
   deltaThreshold: 25
+  multiplier: 1
   costDisplay: {fileID: 2071412783}
   valueDisplay: {fileID: 2071412782}
   quantityDisplay: {fileID: 2071412781}
@@ -1836,6 +1863,7 @@ GameObject:
   - component: {fileID: 667920297}
   - component: {fileID: 667920296}
   - component: {fileID: 667920295}
+  - component: {fileID: 667920298}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -1902,7 +1930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 690866374}
+      - m_Target: {fileID: 667920298}
         m_MethodName: OnBuy
         m_Mode: 1
         m_Arguments:
@@ -1950,6 +1978,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 667920293}
+--- !u!114 &667920298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 667920293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1b4f88af7c1c548a751b21c8ae79d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCost: 50
+  deltaCost: 1.16
+  currentCost: 50
+  baseValue: 0.1
+  deltaValue: 1.5
+  baseThreshold: 10
+  deltaThreshold: 10
+  multiplier: 1
+  costDisplay: {fileID: 1836355751}
+  valueDisplay: {fileID: 1836355750}
+  quantityDisplay: {fileID: 1836355749}
+  btn: {fileID: 0}
+  button: {fileID: 667920293}
 --- !u!1 &686484784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,6 +2032,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoGenScoreIncrease: 0
   clickScoreIncrease: 1
+  clickPercentScoreIncrease: 0
+  clickResearches: []
   objText: {fileID: 641906985}
   upgrades:
   - {fileID: 1071388440}
@@ -2051,6 +2105,7 @@ MonoBehaviour:
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
+  multiplier: 1
   costDisplay: {fileID: 1836355751}
   valueDisplay: {fileID: 1836355750}
   quantityDisplay: {fileID: 1836355749}
@@ -2795,6 +2850,7 @@ MonoBehaviour:
   deltaValue: 2
   baseThreshold: 25
   deltaThreshold: 25
+  multiplier: 1
   costDisplay: {fileID: 2084372578}
   valueDisplay: {fileID: 2084372577}
   quantityDisplay: {fileID: 2084372576}
@@ -2978,6 +3034,7 @@ GameObject:
   - component: {fileID: 954826902}
   - component: {fileID: 954826901}
   - component: {fileID: 954826900}
+  - component: {fileID: 954826903}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -3044,7 +3101,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 520480458}
+      - m_Target: {fileID: 954826903}
         m_MethodName: OnBuy
         m_Mode: 1
         m_Arguments:
@@ -3092,6 +3149,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 954826898}
+--- !u!114 &954826903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 954826898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935c6f8bb2fc8d14d8c20b6540b5cd73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCost: 250000
+  deltaCost: 1.09
+  currentCost: 250000
+  baseValue: 96
+  deltaValue: 2
+  baseThreshold: 25
+  deltaThreshold: 25
+  multiplier: 1
+  costDisplay: {fileID: 2071412783}
+  valueDisplay: {fileID: 2071412782}
+  quantityDisplay: {fileID: 2071412781}
+  btn: {fileID: 0}
+  button: {fileID: 954826898}
 --- !u!1 &1025351490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,6 +3676,7 @@ MonoBehaviour:
   deltaValue: 2
   baseThreshold: 10
   deltaThreshold: 10
+  multiplier: 1
   costDisplay: {fileID: 1706523833}
   valueDisplay: {fileID: 465906426}
   quantityDisplay: {fileID: 26719430}
@@ -4536,6 +4618,7 @@ MonoBehaviour:
   deltaValue: 1.5
   baseThreshold: 10
   deltaThreshold: 10
+  multiplier: 1
   costDisplay: {fileID: 1050190714}
   valueDisplay: {fileID: 1050190713}
   quantityDisplay: {fileID: 1050190712}
@@ -4577,6 +4660,7 @@ GameObject:
   - component: {fileID: 1387842094}
   - component: {fileID: 1387842093}
   - component: {fileID: 1387842092}
+  - component: {fileID: 1387842095}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -4643,7 +4727,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1071388440}
+      - m_Target: {fileID: 1387842095}
         m_MethodName: OnBuy
         m_Mode: 1
         m_Arguments:
@@ -4691,6 +4775,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1387842090}
+--- !u!114 &1387842095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387842090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6af5b0e3b17bf45b102bbb6c8eacbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCost: 15000
+  deltaCost: 1.07
+  currentCost: 15000
+  baseValue: 16
+  deltaValue: 2
+  baseThreshold: 10
+  deltaThreshold: 10
+  multiplier: 1
+  costDisplay: {fileID: 1706523833}
+  valueDisplay: {fileID: 465906426}
+  quantityDisplay: {fileID: 26719430}
+  btn: {fileID: 0}
+  button: {fileID: 1387842090}
 --- !u!1 &1397011219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5544,8 +5652,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304731591}
   m_HandleRect: {fileID: 304731590}
   m_Direction: 2
-  m_Value: 0.9999985
-  m_Size: 0.5499307
+  m_Value: 0.99999774
+  m_Size: 0.7050748
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5641,6 +5749,7 @@ GameObject:
   - component: {fileID: 1804242740}
   - component: {fileID: 1804242739}
   - component: {fileID: 1804242738}
+  - component: {fileID: 1804242741}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -5707,7 +5816,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1377149608}
+      - m_Target: {fileID: 1804242741}
         m_MethodName: OnBuy
         m_Mode: 1
         m_Arguments:
@@ -5755,6 +5864,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1804242736}
+--- !u!114 &1804242741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804242736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a85d3593f3fd3f408754e3f81e6e0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCost: 500
+  deltaCost: 1.14
+  currentCost: 500
+  baseValue: 4
+  deltaValue: 1.5
+  baseThreshold: 10
+  deltaThreshold: 10
+  multiplier: 1
+  costDisplay: {fileID: 1050190714}
+  valueDisplay: {fileID: 1050190713}
+  quantityDisplay: {fileID: 1050190712}
+  btn: {fileID: 0}
+  button: {fileID: 1804242736}
 --- !u!1 &1831062508
 GameObject:
   m_ObjectHideFlags: 0
@@ -6088,6 +6221,7 @@ GameObject:
   - component: {fileID: 1916019111}
   - component: {fileID: 1916019110}
   - component: {fileID: 1916019109}
+  - component: {fileID: 1916019112}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -6154,7 +6288,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 906415760}
+      - m_Target: {fileID: 1916019112}
         m_MethodName: OnBuy
         m_Mode: 1
         m_Arguments:
@@ -6202,6 +6336,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1916019107}
+--- !u!114 &1916019112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1916019107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3df496b8a45f142b63aab55c7118fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCost: 50000
+  deltaCost: 1.08
+  currentCost: 50000
+  baseValue: 48
+  deltaValue: 2
+  baseThreshold: 25
+  deltaThreshold: 25
+  multiplier: 1
+  costDisplay: {fileID: 2084372578}
+  valueDisplay: {fileID: 2084372577}
+  quantityDisplay: {fileID: 2084372576}
+  btn: {fileID: 0}
+  button: {fileID: 1916019107}
 --- !u!1 &1944118455
 GameObject:
   m_ObjectHideFlags: 0

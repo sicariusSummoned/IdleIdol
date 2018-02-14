@@ -28,9 +28,9 @@ public class UpgradeScript : MonoBehaviour {
     public GameObject button;               //the gameobject of the button for the upgrade
 
     // Use this for initialization
-    private void Awake()
+    protected void Awake()
     {
-        //btn = button.GetComponent<Button>();
+        btn = button.GetComponent<Button>();
     }
     private void Start () {
         //initialize the private values
@@ -70,7 +70,7 @@ public class UpgradeScript : MonoBehaviour {
         quantityDisplay.text = "Owned: " + quantity;
         valueDisplay.text = "Value: " + simpleValue;
 
-        /*
+        
         if (GameManager.PlayerScore >= currentCost)
         {
             btn.interactable = true;
@@ -79,7 +79,7 @@ public class UpgradeScript : MonoBehaviour {
         {
             btn.interactable = false;
         }
-        */
+        
 	}
 
     //handle effects of purchasing the upgrade

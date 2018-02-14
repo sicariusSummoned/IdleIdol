@@ -7,6 +7,7 @@ public class AmpScript : UpgradeScript {
 	// Use this for initialization
 	void Awake () {
         name = "amp";
-	}
+        base.Awake();
+    }
 	
 }
