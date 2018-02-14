@@ -66,9 +66,9 @@ public class UpgradeScript : MonoBehaviour {
         double simpleValue = Math.Round(currentValue, 2);
 
 
-        costDisplay.text = "Price: " + simpleCost;
-        quantityDisplay.text = "Owned: " + quantity;
-        valueDisplay.text = "Value: " + simpleValue;
+        costDisplay.text = "" + simpleCost;
+        quantityDisplay.text = "" + quantity;
+        valueDisplay.text = "" + simpleValue;
 
         
         if (GameManager.PlayerScore >= currentCost)
