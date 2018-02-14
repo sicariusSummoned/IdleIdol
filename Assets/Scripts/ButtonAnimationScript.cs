@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonAnimationScript : MonoBehaviour {
 
@@ -12,12 +13,41 @@ public class ButtonAnimationScript : MonoBehaviour {
     public int happyThreshold;          //number of clicks needed to move to happy mood
     private IdolMood currentMood;
 
-	// Use this for initialization
-	void Start () {
+    public Image idolImageTarget;
+
+    public Sprite galNeutral;
+    public Sprite galBored;
+    public Sprite galHappy;
+
+    public Sprite guyNeutral;
+    public Sprite guyBored;
+    public Sprite guyHappy;
+
+    private Sprite idolHappy;
+    private Sprite idolNeutral;
+    private Sprite idolBored;
+
+    // Use this for initialization
+    void Start () {
         thisTime = 0;
         numClicksMoodChange = 0;
         currentMood = IdolMood.Normal;
         animator = GetComponent<Animator>();
+        
+        //Determine image set
+        if (PlayerPrefs.GetInt("isGirl") == 1)
+        {
+            idolHappy = galHappy;
+            idolBored = galBored;
+            idolNeutral = galNeutral;
+        }
+        else
+        {
+            idolHappy = guyHappy;
+            idolBored = guyBored;
+            idolNeutral = guyNeutral;
+        }
+        idolImageTarget.sprite = idolNeutral;
 	}
 
     void Update()
@@ -66,7 +96,8 @@ public class ButtonAnimationScript : MonoBehaviour {
         currentMood = IdolMood.Bored;
 
         //change image
-        Debug.Log("I'm so bored, click a little");
+        idolImageTarget.sprite = idolBored;
+        //Debug.Log("I'm so bored, click a little");
     }
 
     //change the idol image to the normal image
@@ -76,7 +107,8 @@ public class ButtonAnimationScript : MonoBehaviour {
         currentMood = IdolMood.Normal;
 
         //change image
-        Debug.Log("Oh good, you are actually playing");
+        idolImageTarget.sprite = idolNeutral;
+        //Debug.Log("Oh good, you are actually playing");
     }
 
     //change the idol image to the happy image
@@ -86,6 +118,7 @@ public class ButtonAnimationScript : MonoBehaviour {
         currentMood = IdolMood.Happy;
 
         //change image
-        Debug.Log("Click me even more");
+        idolImageTarget.sprite = idolHappy;
+        //Debug.Log("Click me even more");
     }
 }

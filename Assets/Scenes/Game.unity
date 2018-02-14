@@ -2011,7 +2011,6 @@ GameObject:
   m_Component:
   - component: {fileID: 686484786}
   - component: {fileID: 686484785}
-  - component: {fileID: 686484787}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -2057,20 +2056,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &686484787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 686484784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137d89c655dcc244b814234b0d4613c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeImage: {fileID: 826515155}
-  girlD: {fileID: 21300000, guid: ee00acdaf9a7ea94d8c3e3eb7bae271d, type: 3}
-  boyD: {fileID: 21300000, guid: 166e17f7496f02b48aa26359ffba26b9, type: 3}
 --- !u!1 &690866373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,6 +2479,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happyThreshold: 0
+  idolImageTarget: {fileID: 826515155}
+  galNeutral: {fileID: 21300000, guid: ee00acdaf9a7ea94d8c3e3eb7bae271d, type: 3}
+  galBored: {fileID: 21300000, guid: 296814c114529574ba8e9a4e13ea2f35, type: 3}
+  galHappy: {fileID: 21300000, guid: cc4c9dbf96a50d24fbc1e4273bd0ebc1, type: 3}
+  guyNeutral: {fileID: 21300000, guid: 166e17f7496f02b48aa26359ffba26b9, type: 3}
+  guyBored: {fileID: 21300000, guid: 3a6672d1e21fa724b9c70540f65b4ba9, type: 3}
+  guyHappy: {fileID: 21300000, guid: 5c43588c53290304f9c89e2db62980d4, type: 3}
 --- !u!1 &844953745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,8 +5644,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304731591}
   m_HandleRect: {fileID: 304731590}
   m_Direction: 2
-  m_Value: 0.99999774
-  m_Size: 0.7050748
+  m_Value: 0.99999803
+  m_Size: 0.6605755
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
