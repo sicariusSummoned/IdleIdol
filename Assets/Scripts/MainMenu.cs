@@ -32,7 +32,20 @@ public class MainMenu : MonoBehaviour {
 
 	public void Play(){
 
-		SceneManager.LoadScene ("CharacterSelect");
+        if (PlayerPrefs.GetInt("isGirl", -1) == -1)
+        {
+            SceneManager.LoadScene("CharacterSelect");
+        }
+        else
+        {
+            SceneManager.LoadScene("Game");
+        }
 	}
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
 
 }

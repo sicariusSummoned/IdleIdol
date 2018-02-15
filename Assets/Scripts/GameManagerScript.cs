@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour {
@@ -56,6 +57,7 @@ public class GameManagerScript : MonoBehaviour {
         if(PlayerPrefs.GetFloat("score") != 0)
         {
             playerScore = PlayerPrefs.GetFloat("score");
+            objText.text = PlayerScore.ToString();
         }
 	}
 	
@@ -151,11 +153,8 @@ public class GameManagerScript : MonoBehaviour {
         totalScore += clickScoreIncrease + (clickPercentScoreIncrease * autoGenScoreIncrease);
     }
 
-    public void DeleteData()
+    public void toMenu()
     {
-        Debug.Log("Deleting");
-
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
+        SceneManager.LoadScene("MainMenu");
     }
 }
