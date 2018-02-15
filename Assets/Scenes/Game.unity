@@ -4617,7 +4617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happyThreshold: 0
-  idolImageTarget: {fileID: 0}
+  idolImageTarget: {fileID: 826515155}
   galNeutral: {fileID: 21300000, guid: ee00acdaf9a7ea94d8c3e3eb7bae271d, type: 3}
   galBored: {fileID: 21300000, guid: 296814c114529574ba8e9a4e13ea2f35, type: 3}
   galHappy: {fileID: 21300000, guid: cc4c9dbf96a50d24fbc1e4273bd0ebc1, type: 3}
@@ -6450,7 +6450,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1281225115}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.5670849
+  m_Size: 0.56688446
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9963,7 +9963,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 304731590}
   m_Direction: 2
   m_Value: 0.99999803
-  m_Size: 0.6608548
+  m_Size: 0.6606213
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
