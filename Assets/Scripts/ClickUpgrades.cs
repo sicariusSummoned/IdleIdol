@@ -35,9 +35,9 @@ public class ClickUpgrades : UpgradeScript {
         double simpleCost = Math.Round(currentCost, 2);
         double simpleValue = Math.Round(currentValue, 2);
 
-        costDisplay.text = "Price: " + simpleCost;
-        quantityDisplay.text = "Owned: " + quantity;
-        valueDisplay.text = "Value: " + simpleValue;
+        costDisplay.text = "" + simpleCost;
+        quantityDisplay.text = "" + quantity;
+        valueDisplay.text = "" + simpleValue;
 
         if (GameManager.PlayerScore >= currentCost && quantity < 1 && GameManager.TotalScore >= baseThreshold)
         {
