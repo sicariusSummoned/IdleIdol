@@ -4618,12 +4618,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happyThreshold: 0
   idolImageTarget: {fileID: 0}
-  galNeutral: {fileID: 0}
-  galBored: {fileID: 0}
-  galHappy: {fileID: 0}
-  guyNeutral: {fileID: 0}
-  guyBored: {fileID: 0}
-  guyHappy: {fileID: 0}
+  galNeutral: {fileID: 21300000, guid: ee00acdaf9a7ea94d8c3e3eb7bae271d, type: 3}
+  galBored: {fileID: 21300000, guid: 296814c114529574ba8e9a4e13ea2f35, type: 3}
+  galHappy: {fileID: 21300000, guid: cc4c9dbf96a50d24fbc1e4273bd0ebc1, type: 3}
+  guyNeutral: {fileID: 21300000, guid: 166e17f7496f02b48aa26359ffba26b9, type: 3}
+  guyBored: {fileID: 21300000, guid: 3a6672d1e21fa724b9c70540f65b4ba9, type: 3}
+  guyHappy: {fileID: 21300000, guid: 5c43588c53290304f9c89e2db62980d4, type: 3}
 --- !u!1 &844953745
 GameObject:
   m_ObjectHideFlags: 0
