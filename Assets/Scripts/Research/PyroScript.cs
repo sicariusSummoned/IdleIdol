@@ -18,10 +18,4 @@ public class PyroScript : ClickPercentResearch
         //initialize the private values
         base.Start();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

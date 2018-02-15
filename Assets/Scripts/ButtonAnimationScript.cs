@@ -59,10 +59,13 @@ public class ButtonAnimationScript : MonoBehaviour {
         if (thisTime >= 240 && numClicksMoodChange != 0)
         {
             //check if large amounts of clicking done in the past 4 seconds
-            if (numClicksMoodChange >= happyThreshold && currentMood != IdolMood.Happy)
+            if (numClicksMoodChange >= happyThreshold)
             {
-                //change to happy mood
-                HappyIdol();
+                //change to happy mood if not already happy (nested to avoid swapping normal to happy to normal in a loop from lots of clicking
+                if (currentMood != IdolMood.Happy)
+                {
+                    HappyIdol();
+                }
             }
             else if (currentMood != IdolMood.Normal)
             {

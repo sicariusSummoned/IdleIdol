@@ -7,5 +7,6 @@ public class RecordingScript : UpgradeScript {
 	// Use this for initialization
 	void Awake () {
         name = "recording";
-	}
+        base.Awake();
+    }
 }

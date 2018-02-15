@@ -7,5 +7,6 @@ public class BodyDoubleScript : UpgradeScript {
 	// Use this for initialization
 	void Awake () {
         name = "bodyDub";
-	}
+        base.Awake();
+    }
 }

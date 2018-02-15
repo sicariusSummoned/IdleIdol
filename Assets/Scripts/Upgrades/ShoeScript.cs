@@ -7,5 +7,6 @@ public class ShoeScript : UpgradeScript {
 	// Use this for initialization
 	void Awake () {
         name = "shoes";
-	}
+        base.Awake();
+    }
 }

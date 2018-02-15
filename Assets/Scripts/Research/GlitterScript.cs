@@ -19,9 +19,4 @@ public class GlitterScript : ClickPercentResearch
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

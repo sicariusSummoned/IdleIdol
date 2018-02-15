@@ -18,9 +18,4 @@ public class VloggingScript : ClickUpgrades {
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

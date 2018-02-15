@@ -7,6 +7,6 @@ public class HologramScript : UpgradeScript {
 	// Use this for initialization
 	void Awake () {
         name = "holo";
-
-	}
+        base.Awake();
+    }
 }

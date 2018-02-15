@@ -7,5 +7,6 @@ public class TunerScript : UpgradeScript {
 	// Use this for initialization
 	void Awake () {
         name = "tuner";
-	}
+        base.Awake();
+    }
 }
