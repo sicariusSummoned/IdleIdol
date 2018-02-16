@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCost: 500
-  deltaCost: 1.5
+  deltaCost: 3
   currentCost: 500
   baseValue: 2
   deltaValue: 5
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCost: 20000
-  deltaCost: 1.5
+  deltaCost: 3
   currentCost: 20000
   baseValue: 500
   deltaValue: 1000
@@ -1134,10 +1134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCost: 100
-  deltaCost: 1.5
+  deltaCost: 3
   currentCost: 100
   baseValue: 1
-  deltaValue: 5
+  deltaValue: 2
   baseThreshold: 10
   deltaThreshold: 10
   multiplier: 1
@@ -2355,7 +2355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCost: 80000
-  deltaCost: 1.5
+  deltaCost: 3
   currentCost: 80000
   baseValue: 15
   deltaValue: 45
@@ -5242,7 +5242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCost: 10000
-  deltaCost: 1.5
+  deltaCost: 3
   currentCost: 10000
   baseValue: 5
   deltaValue: 20
@@ -6802,6 +6802,17 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114111001075595994, guid: d5d7d9c38ca920f4aa60b4f290f7e451,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb347965fbc83804eb4ba8a5f980e2a7,
+        type: 3}
+    - target: {fileID: 114111001075595994, guid: d5d7d9c38ca920f4aa60b4f290f7e451,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5d7d9c38ca920f4aa60b4f290f7e451, type: 2}
   m_IsPrefabParent: 0
@@ -8057,7 +8068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCost: 10000
-  deltaCost: 1.5
+  deltaCost: 3
   currentCost: 10000
   baseValue: 100
   deltaValue: 500
@@ -8705,7 +8716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCost: 1000
-  deltaCost: 1.5
+  deltaCost: 3
   currentCost: 1000
   baseValue: 20
   deltaValue: 50

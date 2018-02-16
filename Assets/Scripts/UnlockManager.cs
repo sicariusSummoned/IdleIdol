@@ -31,15 +31,8 @@ public class UnlockManager : MonoBehaviour {
 
         //On game start, make sure that all the stuff we unlocked last time stays unlocked. 
 
-        if (unlockables.Count>0)
-        {
-            PreGameCheck();
-        }
-        else
-        {
-
-            Initialize();
-        }
+        Initialize();
+        PreGameCheck();
 
         InvokeRepeating("CheckAll", 0.25f, 0.25f);
 
@@ -65,9 +58,10 @@ public class UnlockManager : MonoBehaviour {
     {
         for(int i = 0; i < unlockables.Count; i++)
         {
-            if(unlockables[i].locked == false)
+            //1 means unlocked, 0 means locked
+            if(PlayerPrefs.GetInt(unlockables[i].prefString) == 1)
             {
-                unlockables[i].container.SetActive(true);
+                unlockables[i].UnlockMe();
             }
         }
     }
@@ -78,26 +72,29 @@ public class UnlockManager : MonoBehaviour {
     void Initialize()
     {
 
-        unlockables.Add(new Unlockable(50, micAmp, true));
-        unlockables.Add(new Unlockable(250, autoTuner, true));
-        unlockables.Add(new Unlockable(500, tallerShoes, true));
-        unlockables.Add(new Unlockable(15000, holograms, true));
-        unlockables.Add(new Unlockable(50000, recording, true));
-        unlockables.Add(new Unlockable(250000, bodyDouble, true));
+        unlockables.Add(new Unlockable("micAmpFlag",50, micAmp, true));
+        unlockables.Add(new Unlockable("autoTunerFlag",250, autoTuner, true));
+        unlockables.Add(new Unlockable("tallerShoesFlag",500, tallerShoes, true));
+        unlockables.Add(new Unlockable("hologramsFlag",15000, holograms, true));
+        unlockables.Add(new Unlockable("recordingFlag",50000, recording, true));
+        unlockables.Add(new Unlockable("bodyDoubleFlag",250000, bodyDouble, true));
 
-        unlockables.Add(new Unlockable(100, smile, true));
-        unlockables.Add(new Unlockable(1000, vlogging, true));
-        unlockables.Add(new Unlockable(500, glowsticks, true));
-        unlockables.Add(new Unlockable(10000, pyrotechnics, true));
-        unlockables.Add(new Unlockable(10000, fans, true));
-        unlockables.Add(new Unlockable(20000, merchandising, true));
-        unlockables.Add(new Unlockable(80000, glitter, true));
+        unlockables.Add(new Unlockable("smileFlag",100, smile, true));
+        unlockables.Add(new Unlockable("vloggingFlag",1000, vlogging, true));
+        unlockables.Add(new Unlockable("glowsticksFlag",500, glowsticks, true));
+        unlockables.Add(new Unlockable("pyrotechnicsFlag",10000, pyrotechnics, true));
+        unlockables.Add(new Unlockable("fansFlag",10000, fans, true));
+        unlockables.Add(new Unlockable("merchandisingFlag",20000, merchandising, true));
+        unlockables.Add(new Unlockable("glitterFlag",80000, glitter, true));
 
 
     }
 
     void ResetProgress()
     {
-        
+        for(int i = 0; i < unlockables.Count; i++)
+        {
+            unlockables[i].LockMe();
+        }
     }
 }
