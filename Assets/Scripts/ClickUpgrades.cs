@@ -23,9 +23,13 @@ public class ClickUpgrades : UpgradeScript {
 
         if (PlayerPrefs.GetInt(name) != 0)
         {
-            quantity = 0;
+            quantity = PlayerPrefs.GetInt(name);
 
-            OnBuyNoDecrease();
+            currentCost *= Math.Pow(deltaCost, quantity);
+
+            base.Threshold();
+
+            GameManager.clickFlag = true;
         }
     }
 	
@@ -39,7 +43,7 @@ public class ClickUpgrades : UpgradeScript {
         quantityDisplay.text = "" + quantity;
         valueDisplay.text = "" + simpleValue;
 
-        if (GameManager.PlayerScore >= currentCost && quantity < 1 && GameManager.TotalScore >= baseThreshold)
+        if (GameManager.PlayerScore >= currentCost)
         {
             btn.interactable = true;
         }
@@ -52,24 +56,26 @@ public class ClickUpgrades : UpgradeScript {
     public override void OnBuy()
     {
         //Debug.Log(name + " buy");
-
-        if (quantity < 1)
-        {
-
             //subtract the cost
             GameManager.DecreaseScore(currentCost);
 
-            //increase quantity
-            quantity = 1;
+        //increase cost and quantity
+        currentCost *= deltaCost;
+        quantity++;
 
-            PlayerPrefs.SetInt(name, quantity);
+        PlayerPrefs.SetInt(name, quantity);
 
-            currentScoreBenefit = currentValue;
+        currentScoreBenefit = currentValue * quantity;
 
-            Debug.Log(multiplier);
+        //check if threshold was reached
+        if (quantity >= nextThreshold)
+        {
+            base.Threshold();
+        }
+
+        Debug.Log(multiplier);
 
             GameManager.clickFlag = true;
-        }
     }
 
     private void OnBuyNoDecrease()

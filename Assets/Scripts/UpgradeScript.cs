@@ -116,7 +116,7 @@ public class UpgradeScript : MonoBehaviour {
     }
 
     //handle effects of reaching nextThreshold
-    private void Threshold()
+    protected void Threshold()
     {
         //increase value
         currentValue *= deltaValue;

@@ -25,7 +25,7 @@ public class RandomUpgradeScript : MonoBehaviour {
     }
     void Start () {
         buttonTransform = (RectTransform)this.gameObject.transform;
-        spawnTime = 60;//Random.Range(180, 300);         //TODO change to longer amount of time
+        spawnTime = Random.Range(180, 300);         //TODO change to longer amount of time
         counter = 0;
         timesUsed = 0;
         value = Random.Range(180, 300);     //TODO find a way to pass in values for the "golden cookie" to be worth based on game length
@@ -83,7 +83,7 @@ public class RandomUpgradeScript : MonoBehaviour {
         this.gameObject.transform.position = new Vector3(Random.Range((buttonTransform.rect.width / 2), canvasRect.rect.width - upgradeRect.rect.width - (buttonTransform.rect.width/2)), Random.Range((buttonTransform.rect.height / 2), canvasRect.rect.height - (buttonTransform.rect.height / 2)), 0);
 
         //set despawn time
-        despawnTime = 60;//Random.Range(180, 300);
+        despawnTime = Random.Range(180, 300);
 
         //reset counter
         counter = 0;

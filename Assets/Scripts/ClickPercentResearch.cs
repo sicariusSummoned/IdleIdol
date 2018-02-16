@@ -24,9 +24,13 @@ public class ClickPercentResearch : UpgradeScript
 
         if (PlayerPrefs.GetInt(name) != 0)
         {
-            quantity = 0;
+            quantity = PlayerPrefs.GetInt(name);
 
-            OnBuyNoDecrease();
+            currentCost *= Math.Pow(deltaCost, quantity);
+
+            base.Threshold();
+
+            GameManager.clickPercentScoreIncrease += (currentValue / 100);
         }
     }
 
@@ -42,7 +46,7 @@ public class ClickPercentResearch : UpgradeScript
         quantityDisplay.text = "" + quantity;
         valueDisplay.text = "" + simpleValue;
 
-        if (GameManager.PlayerScore >= currentCost && quantity < 1 && GameManager.TotalScore >= baseThreshold)
+        if (GameManager.PlayerScore >= currentCost)
         {
             btn.interactable = true;
         }
@@ -54,20 +58,24 @@ public class ClickPercentResearch : UpgradeScript
 
     public override void OnBuy()
     {
-        if (quantity < 1)
-        {
             //subtract the cost
             GameManager.DecreaseScore(currentCost);
 
-            //increase quantity
-            quantity++;
+        //increase cost and quantity
+        currentCost *= deltaCost;
+        quantity++;
 
-            PlayerPrefs.SetInt(name, quantity);
+        PlayerPrefs.SetInt(name, quantity);
 
-            currentScoreBenefit = currentValue * quantity;
+        currentScoreBenefit = currentValue * quantity;
 
-            GameManager.clickPercentScoreIncrease += (currentValue/100);
+        //check if threshold was reached
+        if (quantity >= nextThreshold)
+        {
+            base.Threshold();
         }
+
+        GameManager.clickPercentScoreIncrease += (currentValue/100);
     }
 
     private void OnBuyNoDecrease()

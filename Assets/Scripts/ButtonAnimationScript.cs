@@ -100,7 +100,7 @@ public class ButtonAnimationScript : MonoBehaviour {
 
         //change image
         idolImageTarget.sprite = idolBored;
-        //Debug.Log("I'm so bored, click a little");
+        Debug.Log("I'm so bored, click a little");
     }
 
     //change the idol image to the normal image
@@ -111,7 +111,7 @@ public class ButtonAnimationScript : MonoBehaviour {
 
         //change image
         idolImageTarget.sprite = idolNeutral;
-        //Debug.Log("Oh good, you are actually playing");
+        Debug.Log("Oh good, you are actually playing");
     }
 
     //change the idol image to the happy image
@@ -122,6 +122,6 @@ public class ButtonAnimationScript : MonoBehaviour {
 
         //change image
         idolImageTarget.sprite = idolHappy;
-        //Debug.Log("Click me even more");
+        Debug.Log("Click me even more");
     }
 }

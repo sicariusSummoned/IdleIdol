@@ -4616,7 +4616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8641ff260fe30ec4b859b97ce135bc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happyThreshold: 0
+  happyThreshold: 20
   idolImageTarget: {fileID: 826515155}
   galNeutral: {fileID: 21300000, guid: ee00acdaf9a7ea94d8c3e3eb7bae271d, type: 3}
   galBored: {fileID: 21300000, guid: 296814c114529574ba8e9a4e13ea2f35, type: 3}
